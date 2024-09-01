@@ -36,3 +36,21 @@ function addItem(event) {
     }
 }
 
+function showAction(element, text, value) {
+    if (value === true) {
+        element.classList.add('success');
+        element.innerText = text;
+        input.value = '';
+        setTimeout(function () {
+            element.classList.remove('success');
+        }, 3000)
+    } else {
+        element.classList.add('alert');
+        element.innerText = text;
+        input.value = '';
+        setTimeout(function () {
+            element.classList.remove('alert');
+        }, 3000)
+    }
+}
+
