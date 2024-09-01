@@ -125,3 +125,15 @@ function removeSingleItem(event) {
 
     }
 }
+
+function editStorage(item) {
+    let groceryItems = JSON.parse(localStorage.getItem('groceryList'));
+    let index = groceryItems.indexOf(item);
+
+    groceryItems.splice(index, 1);
+    //first delete existing list
+    localStorage.removeItem('groceryList');
+    //add new updated/edited list
+    localStorage.setItem('groceryList', JSON.stringify(groceryItems));
+
+}
