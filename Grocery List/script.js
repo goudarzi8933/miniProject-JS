@@ -22,3 +22,17 @@ clear.addEventListener('click', removeItems);
 //Listen to list to delete individual items
 list.addEventListener('click', removeSingleItem);
 
+
+//functions
+function addItem(event) {
+    event.preventDefault();
+    let value = input.value;
+    if (value === '') {
+        showAction(addItemsAction, 'Please add grocery item', false);
+    } else {
+        showAction(addItemsAction, `${value} به فهرست اقلا،م اضافه شد`, true);
+        createItem(value);
+        updateStorage(value);
+    }
+}
+
