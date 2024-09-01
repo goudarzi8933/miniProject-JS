@@ -77,3 +77,14 @@ function updateStorage(value) {
     localStorage.setItem('groceryList', JSON.stringify(groceryList));
 }
 
+//display items in local storage
+function displayStorage() {
+    let exists = localStorage.getItem('groceryList');
+
+    if (exists) {
+        let storageItems = JSON.parse(localStorage.getItem('groceryList'));
+        storageItems.forEach(function (element) {
+            createItem(element);
+        })
+    }
+}
